@@ -82,10 +82,9 @@
                     background (Codeforces rating: 1687) has sharpened my problem-solving skills and 
                     algorithmic thinking.
                 </p>
-                <p>
-                    Based in Chittagong, Bangladesh, I've worked on diverse projects from dental practice 
-                    management tools to customer journey management systems with big data processing.
-                </p>
+                <!-- <p>
+                    Based in Chittagong, Bangladesh, I've worked on diverse projects.
+                </p> -->
             </div>
         </div>
     </section>
@@ -100,7 +99,7 @@
                     <span class="skill-tag">C++</span>
                     <span class="skill-tag">Python</span>
                     <span class="skill-tag">Scala</span>
-                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">Java</span>
                     <span class="skill-tag">JavaScript</span>
                     <span class="skill-tag">SQL</span>
                 </div>
@@ -110,10 +109,8 @@
                 <div class="skill-tags">
                     <span class="skill-tag">Django</span>
                     <span class="skill-tag">Play Framework</span>
-                    <span class="skill-tag">ASP.NET</span>
                     <span class="skill-tag">ReactJS</span>
                     <span class="skill-tag">NextJS</span>
-                    <span class="skill-tag">ExpressJS</span>
                 </div>
             </div>
             <div class="skill-category fade-in">
@@ -123,9 +120,11 @@
                     <span class="skill-tag">Git</span>
                     <span class="skill-tag">MySQL</span>
                     <span class="skill-tag">Kafka</span>
-                    <span class="skill-tag">AWS SQS</span>
-                    <span class="skill-tag">AWS Lambda</span>
+                    <span class="skill-tag">AWS SQS & Lambda</span>
                     <span class="skill-tag">Akka</span>
+                    <span class="skill-tag">SQLAlchemy</span>
+                    <span class="skill-tag">Prisma</span>
+                    <span class="skill-tag">OpenGL</span>
                 </div>
             </div>
         </div>
@@ -138,16 +137,33 @@
             <div class="experience-item fade-in">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-title">Senior Software Engineer L-1</div>
+                        <div class="experience-title">Senior Software Engineer L-1 (Full-Time)</div>
                         <div class="experience-company">Enosis Solutions, Bangladesh</div>
                     </div>
                     <div class="experience-duration">May 2023 - Present</div>
                 </div>
-                <p>Currently working on a real-time dental practice management tool using Django, Python, and ReactJS to help monitor and diagnose dental practices.</p>
-                <p><strong>Previous projects:</strong></p>
+                <!-- <p>Currently working on a real-time dental practice management tool using Django, Python, and ReactJS to help monitor and diagnose dental practices.</p> -->
+                <p><strong>Inter-Module Data Flow Tracking System</strong></p>
                 <ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-gray);">
-                    <li>Customer journey management with big data using Play Framework, Scala, Kafka, and Akka (16 months)</li>
-                    <li>Internal attendance management system using ASP.NET Core, C#, and ReactJS (4 months)</li>
+                    <li>Designed and implemented a multi-threaded, asynchronous system to track data ingestion flow across modules of
+big-data focused project, enabling real-time and batch-wise success rate monitoring on a time and batchwise and
+publish it to SQS metrics.</li>
+                    <li>Developed functionality to dynamically enable or disable tracking for all online machines associated with a specific
+tenant throughout the loadbalancer.</li>
+                </ul>
+
+                <p><strong>Data Duplication Checker Tool</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Researched and developed a high-performance tool capable of detecting duplicates across millions of records,
+optimized for memory efficiency by calculating byte-level value associations.</li>
+                    <li>Engineered to handle large-scale datasets while minimizing memory footprint and ensuring fast execution.</li>
+                </ul>
+
+                <p><strong>Employee Timesheet Management System</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Designed and implemented the database schema to store and manage employee attendance records efficiently and
+developed robust RESTful APIs to support timesheet entry, update, and retrieval functionalities for company use.</li>
+                    
                 </ul>
                 <div class="experience-tech">
                     <span class="tech-tag">Django</span>
@@ -162,12 +178,19 @@
             <div class="experience-item fade-in">
                 <div class="experience-header">
                     <div>
-                        <div class="experience-title">Software Engineer (Part-time)</div>
+                        <div class="experience-title">Ex-Software Engineer (Part-Time)</div>
                         <div class="experience-company">Demian Studio, USA (Remote)</div>
                     </div>
                     <div class="experience-duration">Oct 2024 - Feb 2025</div>
                 </div>
-                <p>Worked on a startup project developing progressive web applications as a full-stack engineer, primarily focused on backend development with NextJS.</p>
+                <p><strong>Game Settlement System with Props</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Designed and implemented the database schema to manage sports stake settlements, supporting game props.</li>
+                    <li>Contributed to the development of the admin dashboard, enabling the generation and display of weekly and monthly
+wager reports for users and agents.</li>
+
+                    
+                </ul>
                 <div class="experience-tech">
                     <span class="tech-tag">NextJS</span>
                     <span class="tech-tag">ExpressJS</span>
@@ -187,7 +210,9 @@
                     <div class="project-type">Thesis Project</div>
                 </div>
                 <div class="project-content">
-                    <p>El-Gamal injected Elliptic Curve Cryptography based RFID Authentication for Internet of Medical Things. Applied advanced cryptography techniques for secure authentication.</p>
+                    <p style="color:rgb(146, 153, 153);">Developed an algorithmic RFID authentication mechanism and implemented cryptographic techniques including
+Elliptic Curve Cryptography (ECC), ElGamal encryption, and bit-level manipulation for robust data protection to
+establish secure communication between server and RFID tags.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Cryptography</span>
                         <span class="tech-tag">ECC</span>
@@ -200,10 +225,11 @@
             <div class="project-card fade-in">
                 <div class="project-header">
                     <div class="project-title">SGIPC Website</div>
-                    <div class="project-type">Web Development</div>
+                    <div class="project-type">Web Application Development</div>
                 </div>
                 <div class="project-content">
-                    <p>Club management and records system for SGIPC (Special Group Interested in Programming Contest), a problem-solving focused community.</p>
+                    <p style="color:rgb(146, 153, 153);">Developed a club management web application for SGIPC, a problem-solving focused community with tracking
+improvements of members throughout problem suggestions, tutorials and rankings.</p>
                     <div class="project-tech">
                         <span class="tech-tag">ASP.NET MVC</span>
                         <span class="tech-tag">C#</span>
@@ -218,7 +244,8 @@
                     <div class="project-type">System Project</div>
                 </div>
                 <div class="project-content">
-                    <p>Desktop application that determines facial emotions from online recorded class videos using machine learning techniques.</p>
+                    <p style="color:rgb(146, 153, 153);">Developed an windows application to analyze and interpret student engagement during online classes by detecting
+facial emotions employed Haarcascade classifiers and keras for real-time face detection and feature extraction</p>
                     <div class="project-tech">
                         <span class="tech-tag">PyQt5</span>
                         <span class="tech-tag">Python</span>
@@ -227,28 +254,14 @@
                 </div>
             </div>
 
-            <div class="project-card fade-in">
-                <div class="project-header">
-                    <div class="project-title">CPNocolo</div>
-                    <div class="project-type">iOS App</div>
-                </div>
-                <div class="project-content">
-                    <p>iOS application featuring upcoming contest calendar along with personal notes functionality for competitive programmers.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">iOS</span>
-                        <span class="tech-tag">Swift</span>
-                        <span class="tech-tag">Firebase</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card fade-in">
+             <div class="project-card fade-in">
                 <div class="project-header">
                     <div class="project-title">AimLab</div>
-                    <div class="project-type">OpenGL Project</div>
+                    <div class="project-type">OpenGL-Based First-Person Shooter Simulator</div>
                 </div>
                 <div class="project-content">
-                    <p>First-person shooting game practice environment built with OpenGL for improving aim and reflexes.</p>
+                    <p style="color:rgb(146, 153, 153);">Built a 3D first-person shooter practice environment using OpenGL with real-time rendering of a dynamic 3D
+environment, including interactive targets, crosshair tracking, and shooting mechanics.</p>
                     <div class="project-tech">
                         <span class="tech-tag">OpenGL</span>
                         <span class="tech-tag">GLUT</span>
@@ -259,55 +272,150 @@
 
             <div class="project-card fade-in">
                 <div class="project-header">
-                    <div class="project-title">Market Communication</div>
-                    <div class="project-type">Console Application</div>
+                    <div class="project-title">CPNocolo</div>
+                    <div class="project-type">iOS App</div>
                 </div>
                 <div class="project-content">
-                    <p>Console-based community platform for owners, workers, and customers including purchasing goods and communication features.</p>
+                    <p style="color:rgb(146, 153, 153);">iOS application featuring upcoming contest calendar along with personal notes functionality for competitive programmers.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">iOS</span>
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+
+           
+           
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">Market Communication</div>
+                    <div class="project-type">C++ Console Application</div>
+                </div>
+                <div class="project-content">
+                    <p style="color:rgb(146, 153, 153);">Developed a simulation of a digital marketplace with distinct roles and managing purchases and communicating on
+private and public chat threads.</p>
                     <div class="project-tech">
                         <span class="tech-tag">C++</span>
                         <span class="tech-tag">Console App</span>
                     </div>
                 </div>
             </div>
+
+             <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">CpPanda</div>
+                    <div class="project-type">Android App</div>
+                </div>
+                <div class="project-content">
+                    <p style="color:rgb(146, 153, 153);">Android application featuring upcoming contest calendar along with personal notes functionality for competitive programmers.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Achievements Section -->
     <section id="achievements" class="section">
-        <h2>Programming Achievements</h2>
+        <h2>Programming Career</h2>
         <div class="achievements-grid">
             <div class="achievement-card fade-in">
                 <div class="achievement-icon">
                     <i class="fas fa-trophy"></i>
                 </div>
                 <div class="achievement-title">Codeforces Expert</div>
-                <div class="achievement-desc">Max Rating: 1687<br>2300+ Problems Solved</div>
+                <div class="achievement-desc">Max Rating: 1687</div><br>
+                <div class="achievement-title">Codechef 3 Star</div>
+                <div class="achievement-desc">Max Rating: 1773</div><br>
+                <div class="achievement-title">2300+ Problems Solved</div>
             </div>
 
             <div class="achievement-card fade-in">
                 <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
+                    <i class="fas fa-code"></i>
                 </div>
-                <div class="achievement-title">ICPC Dhaka Regional</div>
-                <div class="achievement-desc">27th in Preliminary (2021)<br>34th in Final (2023)</div>
+                <div class="achievement-title">On-site Contest</div>
+                <div class="achievement-desc">
+                   <li> 27th at ICPC-20 Dhaka regional preliminary(2021)
+                    <li>34th at ICPC-22 Dhaka regional final (2023)
+                    <li>38th at ICPC-20 Dhaka regional final (2021)
+                    <li>38th at AUST IUPC-22 (2022)
+                    <li>39th at NCPC-20 (2020)
+                    <li>48th at ICPC-21 Dhaka regional final (2022)
+                    <li>Nationalist at NHSPC (2015)
+                    <li>3rd at UGV Intra SZPC (2023)
+                </div>
             </div>
 
-            <div class="achievement-card fade-in">
+            <!-- <div class="achievement-card fade-in">
                 <div class="achievement-icon">
                     <i class="fas fa-award"></i>
                 </div>
                 <div class="achievement-title">UGV Intra SZPC</div>
                 <div class="achievement-desc">3rd Place (2023)</div>
-            </div>
+            </div> -->
 
             <div class="achievement-card fade-in">
                 <div class="achievement-icon">
                     <i class="fas fa-users"></i>
                 </div>
                 <div class="achievement-title">SGIPC President</div>
-                <div class="achievement-desc">Led programming community<br>Jan 2022 - Feb 2023</div>
+                <div class="achievement-desc">Led programming community of KUET, BD<br>Jan 2022 - Feb 2023</div>
             </div>
+        </div>
+    </section>
+
+
+    <section id="achievements" class="section">
+        <h2>EXTRA-CURRICULAR ACHIEVEMENTS</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="achievement-title">Debate</div>
+                <div class="achievement-desc">
+                        <li>Champion at National School Debate Competition, CUET
+                        (2014)
+                        <li>Regional Champion at BDS Debate
+Competition, Dhaka (2016)</div>
+            </div>
+
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div class="achievement-title">Scholarships</div>
+                <div class="achievement-desc">
+                   <li>Board Scholarship ( General ) from Chttagong Board
+(2017 HSC)
+                    <li>Board Scholarship ( Talent pool ) from Chttagong Board
+(2015 SSC)
+                    
+                </div>
+            </div>
+
+            <!-- <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="achievement-title">UGV Intra SZPC</div>
+                <div class="achievement-desc">3rd Place (2023)</div>
+            </div> -->
+
+            <!-- <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="achievement-title">SGIPC President</div>
+                <div class="achievement-desc">Led programming community of KUET, BD<br>Jan 2022 - Feb 2023</div>
+            </div> -->
         </div>
     </section>
 
@@ -338,7 +446,8 @@
                     </div>
                     <div>
                         <strong>Phone</strong><br>
-                        <span style="color: var(--text-gray);">+880 1307-876753</span>
+                        <span style="color: var(--text-gray);">+880 1307-876753</span> <br>
+                        <span style="color: var(--text-gray);">+880 1521-222545</span>
                     </div>
                 </div>
 
@@ -353,7 +462,7 @@
                 </div>
 
                 <div class="contact-links">
-                    <a href="https://linkedin.com/in/mustafiz" class="social-link" target="_blank">
+                    <a href="https://www.linkedin.com/in/md-mustafizur-rahman-arman-79a1181a4/" class="social-link" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                     <a href="https://github.com/Fizzz083" class="social-link" target="_blank">
@@ -362,21 +471,34 @@
                     <a href="mailto:mdmustafiz7676@gmail.com" class="social-link">
                         <i class="fas fa-envelope"></i>
                     </a>
+
+                    <a href="https://www.facebook.com/mustafiz.arman.1/" class="social-link">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <!-- <a href="mailto:mdmustafiz7676@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="mailto:mdmustafiz7676@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a> -->
                 </div>
             </div>
 
             <div class="contact-form-container">
                 <div style="background: var(--dark-card); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.1);">
-                    <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Current Status</h3>
+                    <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Overview</h3>
                     <div style="margin-bottom: 1rem;">
                         <strong style="color: var(--text-light);">🎓 Education:</strong>
-                        <p style="color: var(--text-gray); margin: 0.5rem 0;">Masters in Computer Science at CUET (2025-Current)</p>
-                        <p style="color: var(--text-gray); margin: 0.5rem 0;">B.Sc. Computer Science from KUET (2018-2023)</p>
+                        <li style="color: var(--text-gray); margin: 0.5rem 0;">Masters in Computer Science at CUET, BD (2025-Current) || Part time</li>
+                        <li style="color: var(--text-gray); margin: 0.5rem 0;">B.Sc. Computer Science from KUET, BD (2018-2023)</li>
+                        <li style="color: var(--text-gray); margin: 0.5rem 0;">HSC from Chittagong College, BD (2017)</li>
+                        <li style="color: var(--text-gray); margin: 0.5rem 0;">SSC from Chittagong Collegiate School, BD (2015)</li>
                     </div>
                     <div style="margin-bottom: 1rem;">
                         <strong style="color: var(--text-light);">💼 Work:</strong>
-                        <p style="color: var(--text-gray); margin: 0.5rem 0;">Senior Software Engineer at Enosis Solutions</p>
-                        <p style="color: var(--text-gray); margin: 0.5rem 0;">Open to new opportunities and collaborations</p>
+                        <li style="color: var(--text-gray); margin: 0.5rem 0;">Senior Software Engineer at Enosis Solutions, BD</li>
+                        <li style="color: var(--text-gray); margin: 0.5rem 0;">Ex-Software Engineer at Demian Studio, USA </li>
+                        <!-- <li style="color: var(--text-gray); margin: 0.5rem 0;">Open to new opportunities and collaborations</li> -->
                     </div>
                     <div>
                         <strong style="color: var(--text-light);">🌟 Interests:</strong>
