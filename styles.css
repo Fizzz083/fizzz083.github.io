@@ -11,7 +11,7 @@
     --dark-bg: #0f172a;
     --dark-card: #1e293b;
     --text-light: #f8fafc;
-    --text-gray: #64748b;
+    --text-gray: #7a98c3;
     --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
@@ -415,8 +415,9 @@ nav {
 }
 
 .experience-company {
-    color: var(--text-light);
+    color: #a8b5d1;
     font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .experience-duration {
