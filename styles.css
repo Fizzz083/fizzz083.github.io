@@ -146,6 +146,14 @@ nav {
     text-align: center;
     position: relative;
 }
+.hero-top {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
 
 .hero-image {
     width: 200px;
@@ -609,6 +617,11 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .hero-top {
+        height: 15vh;
+    }
+
     .nav-links {
         position: fixed;
         top: 70px;
