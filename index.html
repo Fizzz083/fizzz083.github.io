@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Mustafizur Rahman Arman - Software Engineer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --text-light: #f8fafc;
+            --text-gray: #64748b;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background: var(--dark-bg);
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #475569);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent-color);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            /* background: var(--gradient); */
+            background-image: url('profile_pic.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            margin: 0 auto;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-color);
+        }
+
+        .experience-item {
+            position: relative;
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            margin-left: 2rem;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--dark-bg);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .experience-company {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .experience-duration {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--dark-card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .project-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-type {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--dark-card);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .achievement-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .achievement-title {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-desc {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--dark-card);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-card);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Mustafiz Rahman</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <!-- <img src="profile_pic.jpg" style="width: 200px;"/> -->
+             <div class="about-image">
+                <div class="profile-img">
+                        <!-- <img src="profile_pic.jpg" style="width: 200px;"/> -->
+                    </i>
+                </div>
+            </div>
+            <h1>Md. Mustafizur Rahman Arman</h1>
+            <p class="subtitle">Senior Software Engineer</p>
+            <p class="hero-description">
+                Passionate full-stack developer with expertise in scalable web applications, 
+                competitive programming, and cutting-edge technologies. Currently pursuing Masters 
+                in Computer Science while building innovative solutions.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+                <a href="https://github.com/Fizzz083" class="btn btn-outline" target="_blank">
+                    <i class="fab fa-github"></i> View GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-grid">
+            <div class="about-image">
+                <!-- <div class="profile-img">
+                         <img src="profile_pic.jpg" style="width: 200px;"/> 
+                    </i>
+                </div> -->
+            </div>
+            <div class="about-content">
+                <h3>Software Engineer & Problem Solver</h3>
+                <p>
+                    I'm a Senior Software Engineer at Enosis Solutions with a strong background in 
+                    full-stack development and competitive programming. With experience spanning from 
+                    Django and React to Scala and Kafka, I love tackling complex technical challenges.
+                </p>
+                <p>
+                    Currently pursuing my Masters in Computer Science at CUET while working full-time, 
+                    I'm passionate about creating efficient, scalable solutions. My competitive programming 
+                    background (Codeforces rating: 1687) has sharpened my problem-solving skills and 
+                    algorithmic thinking.
+                </p>
+                <p>
+                    Based in Chittagong, Bangladesh, I've worked on diverse projects from dental practice 
+                    management tools to customer journey management systems with big data processing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Scala</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">Play Framework</span>
+                    <!-- <span class="skill-tag">ASP.NET</span> -->
+                    <span class="skill-tag">ReactJS</span>
+                    <span class="skill-tag">NextJS</span>
+                    <!-- <span class="skill-tag">ExpressJS</span> -->
+                </div>
+            </div>
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Kafka</span>
+                    <span class="skill-tag">AWS SQS</span>
+                    <span class="skill-tag">AWS Lambda</span>
+                    <span class="skill-tag">Akka</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2>Work Experience</h2>
+        <div class="experience-timeline">
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Senior Software Engineer L-1</div>
+                        <div class="experience-company">Enosis Solutions, Bangladesh</div>
+                    </div>
+                    <div class="experience-duration">May 2023 - Present</div>
+                </div>
+                <!-- <p>Currently working on a real-time dental practice management tool using Django, Python, and ReactJS to help monitor and diagnose dental practices.</p> -->
+                <p><strong>Inter-Module Data Flow Tracking System</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Designed and implemented a multi-threaded, asynchronous system to track data ingestion flow across modules of
+big-data focused project, enabling real-time and batch-wise success rate monitoring on a time and batchwise and
+publish it to SQS metrics.</li>
+                    <li>Developed functionality to dynamically enable or disable tracking for all online machines associated with a specific
+tenant throughout the loadbalancer.</li>
+                </ul>
+
+                <p><strong>Data Duplication Checker Tool</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Researched and developed a high-performance tool capable of detecting duplicates across millions of records,
+optimized for memory efficiency by calculating byte-level value associations.</li>
+                    <li>Engineered to handle large-scale datasets while minimizing memory footprint and ensuring fast execution.</li>
+                </ul>
+
+                <p><strong>Employee Timesheet Management System</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-gray);">
+                    <li>Designed and implemented the database schema to store and manage employee attendance records efficiently and
+developed robust RESTful APIs to support timesheet entry, update, and retrieval functionalities for company use.</li>
+                    
+                </ul>
+
+                <div class="experience-tech">
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">ReactJS</span>
+                    <span class="tech-tag">Scala</span>
+                    <span class="tech-tag">Kafka</span>
+                    <span class="tech-tag">ASP.NET</span>
+                </div>
+            </div>
+            
+            <div class="experience-item fade-in">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Software Engineer (Part-time)</div>
+                        <div class="experience-company">Demian Studio, USA (Remote)</div>
+                    </div>
+                    <div class="experience-duration">Oct 2024 - Feb 2025</div>
+                </div>
+                <!-- <p>Worked on a startup project developing progressive web applications as a full-stack engineer, primarily focused on backend development with NextJS.</p> -->
+                <div class="experience-tech">
+                    <span class="tech-tag">NextJS</span>
+                    <span class="tech-tag">ExpressJS</span>
+                    <span class="tech-tag">Full-Stack</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">ECC-based RFID Authentication</div>
+                    <div class="project-type">Thesis Project</div>
+                </div>
+                <div class="project-content">
+                    <p>Developed an algorithmic RFID authentication mechanism and implemented cryptographic techniques including
+Elliptic Curve Cryptography (ECC), ElGamal encryption, and bit-level manipulation for robust data protection to
+establish secure communication between server and RFID tags.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Cryptography</span>
+                        <span class="tech-tag">ECC</span>
+                        <span class="tech-tag">El-Gamal</span>
+                        <span class="tech-tag">RFID</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">SGIPC Website</div>
+                    <div class="project-type">Web Development</div>
+                </div>
+                <div class="project-content">
+                    <p>Developed a club management web application for SGIPC, a problem-solving focused community with tracking
+improvements of members throughout problem suggestions, tutorials and rankings.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ASP.NET MVC</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">SQLite</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">Facial Feedback for Online Class</div>
+                    <div class="project-type">System Project</div>
+                </div>
+                <div class="project-content">
+                    <p>Developed an windows application to analyze and interpret student engagement during online classes by detecting
+facial emotions employed Haarcascade classifiers and keras for real-time face detection and feature extraction.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">PyQt5</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">CPNocolo</div>
+                    <div class="project-type">iOS App</div>
+                </div>
+                <div class="project-content">
+                    <p>iOS application featuring upcoming contest calendar along with personal notes functionality for competitive programmers.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">iOS</span>
+                        <span class="tech-tag">Swift</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">AimLab</div>
+                    <div class="project-type">OpenGL Project</div>
+                </div>
+                <div class="project-content">
+                    <p>Built a 3D first-person shooter practice environment using OpenGL with real-time rendering of a dynamic 3D
+environment, including interactive targets, crosshair tracking, and shooting mechanics.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">OpenGL</span>
+                        <span class="tech-tag">GLUT</span>
+                        <span class="tech-tag">C++</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div class="project-title">Market Communication</div>
+                    <div class="project-type">Console Application</div>
+                </div>
+                <div class="project-content">
+                    <p>Developed a simulation of a digital marketplace with distinct roles and managing purchases and communicating on
+private and public chat threads.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Console App</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+        <h2>Programming Career</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="achievement-title">Codeforces Expert</div>
+                <div class="achievement-desc">Max Rating: 1687<br>2300+ Problems Solved</div>
+            </div>
+
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <div class="achievement-title">On-site Contest</div>
+                <div class="achievement-desc">
+                    27th in Preliminary (2021)
+                    <br>34th in Final (2023)
+                    <br>38th at ICPC-20 Dhaka regional final (2021)
+                    <br>3rd at UGV Intra SZPC (2023)
+                </div>
+            </div>
+
+            <!-- <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="achievement-title">UGV Intra SZPC</div>
+                <div class="achievement-desc">3rd Place (2023)</div>
+            </div> -->
+
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="achievement-title">SGIPC President</div>
+                <div class="achievement-desc">Led programming community<br>Jan 2022 - Feb 2023</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Let's Connect!</h3>
+                <p style="color: var(--text-gray); margin-bottom: 2rem;">
+                    I'm always interested in new opportunities and collaborations. 
+                    Whether you want to discuss a project, job opportunity, or just chat about technology!
+                </p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <strong>Email</strong><br>
+                        <span style="color: var(--text-gray);">mdmustafiz7676@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <span style="color: var(--text-gray);">+880 1307-876753</span>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <strong>Location</strong><br>
+                        <span style="color: var(--text-gray);">Chittagong, Bangladesh</span>
+                    </div>
+                </div>
+
+                <div class="contact-links">
+                    <a href="https://linkedin.com/in/mustafiz" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Fizzz083" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:mdmustafiz7676@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <div style="background: var(--dark-card); padding: 2rem; border-radius: 15px; border: 1px solid rgba(59, 130, 246, 0.1);">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;">Current Status</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: var(--text-light);">🎓 Education:</strong>
+                        <p style="color: var(--text-gray); margin: 0.5rem 0;">Masters in Computer Science at CUET (2025-Current)</p>
+                        <p style="color: var(--text-gray); margin: 0.5rem 0;">B.Sc. Computer Science from KUET (2018-2023)</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: var(--text-light);">💼 Work:</strong>
+                        <p style="color: var(--text-gray); margin: 0.5rem 0;">Senior Software Engineer at Enosis Solutions</p>
+                        <p style="color: var(--text-gray); margin: 0.5rem 0;">Open to new opportunities and collaborations</p>
+                    </div>
+                    <div>
+                        <strong style="color: var(--text-light);">🌟 Interests:</strong>
+                        <p style="color: var(--text-gray); margin: 0.5rem 0;">Full-stack development, Competitive programming, System design, Machine learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Md. Mustafizur Rahman Arman. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; color: var(--text-gray);">
+            Built with passion for clean code and elegant solutions
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(15, 23, 42, 0.98)';
+            } else {
+                nav.style.background = 'rgba(15, 23, 42, 0.95)';
+            }
+        });
+
+        // Dynamic typing effect for hero subtitle (optional enhancement)
+        const subtitle = document.querySelector('.hero .subtitle');
+        const titles = [
+            'Senior Software Engineer',
+            'Full-Stack Developer', 
+            'Competitive Programmer',
+            'Problem Solver'
+        ];
+        let currentTitle = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const current = titles[currentTitle];
+            
+            if (isDeleting) {
+                subtitle.textContent = current.substring(0, currentChar - 1);
+                currentChar--;
+            } else {
+                subtitle.textContent = current.substring(0, currentChar + 1);
+                currentChar++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && currentChar === current.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentTitle = (currentTitle + 1) % titles.length;
+                typeSpeed = 500; // Pause before next title
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Start typing animation after page load
+        setTimeout(() => {
+            typeWriter();
+        }, 2000);
+
+        // Add some interactive elements
+        document.querySelectorAll('.skill-tag, .tech-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 5px 15px rgba(59, 130, 246, 0.3)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Add click effect to cards
+        document.querySelectorAll('.project-card, .achievement-card, .skill-category').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.style.transform = `translateY(${scrolled * 0.2}px)`;
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
