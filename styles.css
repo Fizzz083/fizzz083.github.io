@@ -680,8 +680,14 @@ footer {
 }
 
 
-@media (max-width: 370px ) {
-    .hero-image {
-        margin: 20rem auto 4rem;
-    }
+@media (max-width: 500px)  {
+  
+  /* Styles specific to iPhone 16 */
+  body {
+    background-color: lightblue;
+  }
+
+  .hero-content {
+    margin: 20rem auto 4rem;
+  }
 }
